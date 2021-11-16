@@ -24,7 +24,7 @@ If you want to contribute to this project, please follow these guidelines.
 
 ## General Guidelines
 
-1. You can use our python library to interact with the API. See the documentation [here](https://alphacast-python-sdk.readthedocs.io/en/latest/reference.html#quick-start) or connect directly with the API ([Postman Doc](https://documenter.getpostman.com/view/17184186/TzzDLb94))
+1. The script should be written in Python. You can use our python library to interact with the API. See the documentation [here](https://alphacast-python-sdk.readthedocs.io/en/latest/reference.html#quick-start) or connect directly with the API ([Postman Doc](https://documenter.getpostman.com/view/17184186/TzzDLb94))
 
 2. Use your API_KEY and your repository. use a .env with the variable
 
