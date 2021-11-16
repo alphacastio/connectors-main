@@ -26,8 +26,8 @@ write the name and/or alphacast id of the destination repository.  Write pending
 [Date, Country, ColumnX, etc]
 
 **What data should be extracted?**
-Describe as precisely as possible.  Use images if needed (recommended)
-* What is the URL of the data? does it change or it is always the same? 
+Describe as precisely as possible. Provide examples if needed. Try to use images (recommended)
+* What is the URL of the data? Does it change or it is always the same? 
 * Where is the date? 
 * Where is the data?
 * Which are the variables or how should the variable names be created? 
