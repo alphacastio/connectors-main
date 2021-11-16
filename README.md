@@ -15,3 +15,36 @@ Our database grows on a daily basis but we will be happy if you want to help us 
 
 If you want to contribute to this project, please follow these guidelines.
 
+- The "issues" section is our backlog. It includes the data sources that we have identified and are planning to work on. 
+- Issues are labeled by repository, source format and difficulty. Our team have estimated the aproximate work needed to solve a specific issue. It depends on your skills, but to use as a benchmark: Easy should require less than one hour of work, intermediate from one to four, difficult from 4 to 8.
+- The scripts in the codeBase should do three things
+1. Download the data from the source, parse it, clean it and structure it, preferently on a Pandas DataFrame.
+2. Create and initialize the dataset (only to be run once) in YOUR repository. Once aproved we will move it to an Alphacast Certified Dataset. 
+3. Upload the data using the API or the Pyhon Library.
+
+## General Guidelines
+
+1. You can use our python library to interact with the API. See the documentation [here](https://alphacast-python-sdk.readthedocs.io/en/latest/reference.html#quick-start) or connect directly with the API ([Postman Doc](https://documenter.getpostman.com/view/17184186/TzzDLb94))
+
+2. Use your API_KEY and your repository. use a .env with the variable
+
+'''
+from alphacast import Alphacast
+from dotenv import dotenv_values
+API_KEY = dotenv_values(".env").get("API_KEY")
+alphacast = Alphacast(API_KEY)
+'''
+
+3. Create and initialize the dataset and upload the data to confirm that everything works properly!
+
+'''
+dataset_name = 'your dataset_name'
+dataset = alphacast.datasets.create(dataset_name, your_repo_id)
+alphacast.datasets.dataset(dataset['id']).initialize_columns(dateColumnName = 'Date', 
+             entitiesColumnNames=['country'], dateFormat= '%Y-%m-%d')
+
+alphacast.datasets.dataset(dataset['id']).upload_data_from_df(df, 
+                 deleteMissingFromDB = True, onConflictUpdateDB = True, uploadIndex=False)
+'''
+
+4. Submit you code with a Pull Request refering to the issue either in this Repository or in the destination Repository
