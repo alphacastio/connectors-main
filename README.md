@@ -28,16 +28,16 @@ If you want to contribute to this project, please follow these guidelines.
 
 2. Use your API_KEY and your repository. use a .env with the variable
 
-'''
+```
 from alphacast import Alphacast
 from dotenv import dotenv_values
 API_KEY = dotenv_values(".env").get("API_KEY")
 alphacast = Alphacast(API_KEY)
-'''
+```
 
 3. Create and initialize the dataset and upload the data to confirm that everything works properly!
 
-'''
+```
 dataset_name = 'your dataset_name'
 dataset = alphacast.datasets.create(dataset_name, your_repo_id)
 alphacast.datasets.dataset(dataset['id']).initialize_columns(dateColumnName = 'Date', 
@@ -45,6 +45,6 @@ alphacast.datasets.dataset(dataset['id']).initialize_columns(dateColumnName = 'D
 
 alphacast.datasets.dataset(dataset['id']).upload_data_from_df(df, 
                  deleteMissingFromDB = True, onConflictUpdateDB = True, uploadIndex=False)
-'''
+```
 
 4. Submit you code with a Pull Request refering to the issue either in this Repository or in the destination Repository
