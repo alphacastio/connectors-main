@@ -47,4 +47,17 @@ alphacast.datasets.dataset(dataset['id']).upload_data_from_df(df,
                  deleteMissingFromDB = True, onConflictUpdateDB = True, uploadIndex=False)
 ```
 
-4. Submit you code with a Pull Request refering to the issue either in this Repository or in the destination Repository
+4. To validate that you upload is correct you can do two things:
+
+a. Go to alphacast dataset view and check that the data is there https://www.alphacast.io/datasets/datasetId
+
+b. Check the status of the upload process with:
+
+```
+alphacast.datasets.dataset(datasetId).processes()
+alphacast.datasets.dataset(datasetId).process(processId)
+```
+
+5. Submit you code with a Pull Request refering to the issue either in this Repository or in the destination Repository
+
+
